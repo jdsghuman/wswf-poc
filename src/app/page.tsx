@@ -1,4 +1,5 @@
 import Container from "@/components/container";
+import { Button } from "@/components/ui/button";
 import {
   Card,
   CardContent,
@@ -8,40 +9,81 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import ZoomLink from "@/components/zoom-link";
+import { FaYoutube } from "react-icons/fa";
+import { FaFilePdf } from "react-icons/fa6";
+import { FaPodcast } from "react-icons/fa";
 
 export default function Home() {
   return (
     <Container>
-      <div className="my-4 flex justify-end">
+      <div className="my-4 mx-4 flex justify-end">
         <ZoomLink meetingId="1234567890" passcode="password123" />
       </div>
-      <div className="flex w-full m-2 mt-8">
-        <div className="flex-1 ml-1 mr-1">
-          <Card>
+      <div className="flex w-full mt-8 max-xl:flex-col">
+        <div className="flex-1 ml-1 mr-1 max-xl:my-2">
+          <Card className="flex flex-col h-full">
             <CardHeader>
-              <CardTitle>Card Title</CardTitle>
-              <CardDescription>Card Description</CardDescription>
+              <CardTitle className="border-b border-black pb-2">
+                Upcoming Events
+              </CardTitle>
             </CardHeader>
             <CardContent>
-              <p>Card Content</p>
+              <ul>
+                <li className="flex justify-between items-center my-5 odd:bg-gray-100 p-2">
+                  <p>June 1</p>
+                  <p>Simran @ Young Space</p>
+                  <div>
+                    <Button className="mx-1">More Info</Button>
+                    <Button className="mx-1">Register</Button>
+                  </div>
+                </li>
+                <li className="flex justify-between items-center my-5 odd:bg-gray-100 p-2">
+                  <p>June 15</p>
+                  <p>Power of Connection Workshop</p>
+                  <div>
+                    <Button className="mx-1">More Info</Button>
+                    <Button className="mx-1">Register</Button>
+                  </div>
+                </li>
+                <li className="flex justify-between items-center my-5 odd:bg-gray-100 p-2">
+                  <p>June 30</p>
+                  <p>Mind Strong</p>
+                  <div>
+                    <Button className="mx-1">More Info</Button>
+                    <Button className="mx-1">Register</Button>
+                  </div>
+                </li>
+              </ul>
             </CardContent>
-            <CardFooter>
-              <p>Card Footer</p>
-            </CardFooter>
           </Card>
         </div>
-        <div className="flex-1 ml-1 mr-1">
-          <Card>
+        <div className="flex-1 ml-1 mr-1  max-xl:my-2">
+          <Card className="flex flex-col h-full">
             <CardHeader>
-              <CardTitle>Card Title</CardTitle>
-              <CardDescription>Card Description</CardDescription>
+              <CardTitle className="border-b border-black pb-2">
+                Resources
+              </CardTitle>
             </CardHeader>
             <CardContent>
-              <p>Card Content</p>
+              <ul>
+                <li className="flex items-center my-5 odd:bg-gray-100 p-4">
+                  <FaYoutube color="#FF0000" size={22} />
+                  <p className="ml-2">Simran technique</p>
+                </li>
+                <li className="flex items-center my-5 odd:bg-gray-100 p-4">
+                  <FaPodcast size={22} />
+                  <p className="ml-2">un[Learn] - Life on the ice podcast</p>
+                </li>
+                <li className="flex items-center my-5 odd:bg-gray-100 p-4">
+                  <FaYoutube color="#FF0000" size={22} />
+                  <p className="ml-2">Unstruck Melody - A Journey Inside</p>
+                </li>
+                <li className="flex items-center my-5 odd:bg-gray-100 p-4">
+                  <FaFilePdf size={22} />
+                  <p className="ml-2">Track your thoughts worksheet</p>
+                </li>
+              </ul>
             </CardContent>
-            <CardFooter>
-              <p>Card Footer</p>
-            </CardFooter>
           </Card>
         </div>
       </div>
