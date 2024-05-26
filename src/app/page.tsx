@@ -8,6 +8,8 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { poppins, poppins400 } from "@/app/fonts";
+
 import ZoomLink from "@/components/zoom-link";
 import { FaYoutube } from "react-icons/fa";
 import { FaFilePdf } from "react-icons/fa6";
@@ -23,15 +25,17 @@ export default function Home() {
         <div className="flex-1 ml-1 mr-1 max-xl:my-2">
           <Card className="flex flex-col h-full">
             <CardHeader>
-              <CardTitle className="border-b border-black pb-2">
+              <CardTitle
+                className={`${poppins.className} border-b border-[#113A85] pb-2`}
+              >
                 Upcoming Events
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <ul>
+              <ul className={`${poppins400.className}`}>
                 <li className="flex justify-between items-center odd:bg-gray-100 p-2 py-4 max-sm:flex-col max-sm:py-3">
                   <p>June 1</p>
-                  <p>Simran @ Young Space</p>
+                  <p className={`${poppins.className}`}>Simran @ Young Space</p>
                   <div className="max-sm:mt-1 mb-0">
                     <Button className="mx-1">More Info</Button>
                     <Button className="mx-1">Register</Button>
@@ -39,7 +43,9 @@ export default function Home() {
                 </li>
                 <li className="flex justify-between items-center odd:bg-gray-100 p-2 py-4 max-sm:flex-col max-sm:py-3">
                   <p>June 15</p>
-                  <p>Power of Connection Workshop</p>
+                  <p className={`${poppins.className}`}>
+                    Power of Connection Workshop
+                  </p>
                   <div className="max-sm:mt-1 mb-0">
                     <Button className="mx-1">More Info</Button>
                     <Button className="mx-1">Register</Button>
@@ -47,7 +53,7 @@ export default function Home() {
                 </li>
                 <li className="flex justify-between items-center odd:bg-gray-100 p-2 py-4 max-sm:flex-col max-sm:py-3">
                   <p>June 30</p>
-                  <p>Mind Strong</p>
+                  <p className={`${poppins.className}`}>Mind Strong</p>
                   <div className="max-sm:mt-1 mb-0">
                     <Button className="mx-1">More Info</Button>
                     <Button className="mx-1">Register</Button>
@@ -60,12 +66,14 @@ export default function Home() {
         <div className="flex-1 ml-1 mr-1  max-xl:my-2">
           <Card className="flex flex-col h-full">
             <CardHeader>
-              <CardTitle className="border-b border-black pb-2">
+              <CardTitle
+                className={`${poppins.className} border-b border-[#113A85] pb-2`}
+              >
                 Resources
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <ul>
+              <ul className={`${poppins400.className}`}>
                 <li className="flex items-center my-5 odd:bg-gray-100 p-4">
                   <FaYoutube color="#FF0000" size={22} />
                   <p className="ml-2">Simran technique</p>
