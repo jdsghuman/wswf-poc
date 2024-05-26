@@ -18,7 +18,7 @@ const ZoomLink: React.FC<ZoomLinkProps> = ({
   }`;
 
   return (
-    <Button className="bg-[#2d8cff]">
+    <Button className="bg-[#2d8cff] hover:bg-[#113A85]">
       <Link
         href={zoomUrl}
         target="_blank"
