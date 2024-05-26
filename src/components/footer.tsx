@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { poppins400 } from "@/app/fonts";
+import { poppins400, poppins } from "@/app/fonts";
 import Container from "@/components/container";
 
 const Footer = () => {
@@ -29,7 +29,9 @@ const Footer = () => {
           </div>
         </div>
         <div className="py-2 flex flex-col justify-center items-center">
-          <p className="text-[10px] pt-2">&copy; {getCopyrightYear()} WSWF</p>
+          <p className={`${poppins.className} text-[10px] pt-2`}>
+            &copy; {getCopyrightYear()} WSWF
+          </p>
         </div>
       </Container>
     </footer>
