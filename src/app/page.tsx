@@ -29,26 +29,26 @@ export default function Home() {
             </CardHeader>
             <CardContent>
               <ul>
-                <li className="flex justify-between items-center my-5 odd:bg-gray-100 p-2">
+                <li className="flex justify-between items-center odd:bg-gray-100 p-2 py-4 max-sm:flex-col max-sm:py-3">
                   <p>June 1</p>
                   <p>Simran @ Young Space</p>
-                  <div>
+                  <div className="max-sm:mt-1 mb-0">
                     <Button className="mx-1">More Info</Button>
                     <Button className="mx-1">Register</Button>
                   </div>
                 </li>
-                <li className="flex justify-between items-center my-5 odd:bg-gray-100 p-2">
+                <li className="flex justify-between items-center odd:bg-gray-100 p-2 py-4 max-sm:flex-col max-sm:py-3">
                   <p>June 15</p>
                   <p>Power of Connection Workshop</p>
-                  <div>
+                  <div className="max-sm:mt-1 mb-0">
                     <Button className="mx-1">More Info</Button>
                     <Button className="mx-1">Register</Button>
                   </div>
                 </li>
-                <li className="flex justify-between items-center my-5 odd:bg-gray-100 p-2">
+                <li className="flex justify-between items-center odd:bg-gray-100 p-2 py-4 max-sm:flex-col max-sm:py-3">
                   <p>June 30</p>
                   <p>Mind Strong</p>
-                  <div>
+                  <div className="max-sm:mt-1 mb-0">
                     <Button className="mx-1">More Info</Button>
                     <Button className="mx-1">Register</Button>
                   </div>
