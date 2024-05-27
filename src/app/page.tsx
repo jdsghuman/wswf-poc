@@ -19,6 +19,7 @@ import { getAllEvents } from "@/lib/api";
 import { createEventDateString } from "@/util/create-date-string";
 import { createEventTimeString } from "@/util/create-time-string";
 import { checkIfDatesAreSameDay } from "@/util/filter-events";
+import { EventItemType } from "@/types";
 
 export default async function Home() {
   const upcomingEvents = await getAllEvents();
@@ -41,7 +42,7 @@ export default async function Home() {
             </CardHeader>
             <CardContent className="max-xs:px-0">
               <ul className={`${poppins400.className}`}>
-                {upcomingEvents?.events.map((event) => (
+                {upcomingEvents?.events.map((event: EventItemType) => (
                   <li className="flex justify-between items-center odd:bg-gray-100 p-2 py-4 flex-col max-sm:py-3">
                     {checkIfDatesAreSameDay(
                       event.fields.startDt,
