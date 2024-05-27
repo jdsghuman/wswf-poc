@@ -6,9 +6,9 @@ export interface EventItemType {
     endDt: string;
     url: string;
     location: string;
-    sys: {
-      id: string;
-      type: string;
-    };
+  };
+  sys: {
+    id: string;
+    type: string;
   };
 }

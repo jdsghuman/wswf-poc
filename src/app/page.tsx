@@ -45,7 +45,7 @@ export default async function Home() {
                 {upcomingEvents?.events.map((event: EventItemType) => (
                   <li
                     className="flex justify-between items-center odd:bg-gray-100 p-2 py-4 flex-col max-sm:py-3"
-                    key={event.fields.sys.id}
+                    key={event.sys.id}
                   >
                     {checkIfDatesAreSameDay(
                       event.fields.startDt,
