@@ -43,7 +43,10 @@ export default async function Home() {
             <CardContent className="max-xs:px-0">
               <ul className={`${poppins400.className}`}>
                 {upcomingEvents?.events.map((event: EventItemType) => (
-                  <li className="flex justify-between items-center odd:bg-gray-100 p-2 py-4 flex-col max-sm:py-3">
+                  <li
+                    className="flex justify-between items-center odd:bg-gray-100 p-2 py-4 flex-col max-sm:py-3"
+                    key={event.fields.sys.id}
+                  >
                     {checkIfDatesAreSameDay(
                       event.fields.startDt,
                       event.fields.endDt || ""
@@ -61,7 +64,6 @@ export default async function Home() {
                         <span>
                           {createEventDateString(event.fields.startDt)}
                         </span>
-                        ' '
                         <span>
                           {createEventTimeString(event.fields.startDt)}
                         </span>{" "}
