@@ -12,3 +12,5 @@ export interface EventItemType {
     type: string;
   };
 }
+
+export type SortOrderType = "default" | "newest" | "oldest";
