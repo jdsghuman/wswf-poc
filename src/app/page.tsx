@@ -6,15 +6,16 @@ import EventsCard from "@/components/events";
 import ResourcesCard from "@/components/resources";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { Bell } from "lucide-react";
+import { getAllEvents, getAllResources } from "@/lib/api";
+import { sortEvents } from "@/util/filter-events";
 
-export default function Home() {
+const Home = async () => {
+  const upcomingEvents = await getAllEvents();
+  const eventsToDisplay = sortEvents(upcomingEvents?.events, "default");
+  const resources = await getAllResources();
+
   const { userId } = auth();
 
-  if (userId) {
-    console.log("signed in");
-  } else {
-    console.log("not signed in");
-  }
   return (
     <Container>
       <div className="my-4 mx-4 flex justify-end h-full">
@@ -25,19 +26,23 @@ export default function Home() {
             <Bell className="h-4 w-4" />
             <AlertTitle>Sign in and join online!</AlertTitle>
             <AlertDescription>
-              Click the sign in button in the navbar and view more content.
+              Click the sign in button in the navbarand view more content.
             </AlertDescription>
           </Alert>
         )}
       </div>
       <div className="flex w-full mt-8 max-xl:flex-col">
         <div className="flex-1 ml-1 mr-1 max-xl:my-4">
-          <EventsCard />
+          <EventsCard eventsToDisplay={eventsToDisplay} />
         </div>
-        <div className="flex-1 ml-1 mr-1  max-xl:my-4">
-          <ResourcesCard />
-        </div>
+        {userId && (
+          <div className="flex-1 ml-1 mr-1  max-xl:my-4">
+            <ResourcesCard resources={resources} />
+          </div>
+        )}
       </div>
     </Container>
   );
-}
+};
+
+export default Home;

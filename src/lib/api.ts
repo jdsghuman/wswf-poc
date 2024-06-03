@@ -18,3 +18,18 @@ export async function getAllEvents() {
     };
   }
 }
+
+export async function getAllResources() {
+  const resources = await client
+    .getEntries({
+      content_type: "resource",
+      select: "fields.title, fields.type, fields.location",
+    })
+    .then((response: any) => response.items);
+
+  if (resources) {
+    return {
+      resources,
+    };
+  }
+}

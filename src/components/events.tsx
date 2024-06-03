@@ -4,13 +4,9 @@ import { createEventTimeString } from "@/util/create-time-string";
 import { checkIfDatesAreSameDay, sortEvents } from "@/util/filter-events";
 import { EventItemType } from "@/types";
 import { poppins, poppins400 } from "@/app/fonts";
-import { getAllEvents } from "@/lib/api";
 import { Button } from "./ui/button";
 
-const EventsCard = async () => {
-  const upcomingEvents = await getAllEvents();
-  const eventsToDisplay = sortEvents(upcomingEvents?.events, "default");
-
+const EventsCard = (eventsToDisplay: any) => {
   return (
     <Card className="flex flex-col h-full">
       <CardHeader>
@@ -22,7 +18,7 @@ const EventsCard = async () => {
       </CardHeader>
       <CardContent className="max-xs:px-0">
         <ul className={`${poppins400.className}`}>
-          {eventsToDisplay?.map((event: EventItemType) => (
+          {eventsToDisplay?.eventsToDisplay?.map((event: EventItemType) => (
             <li
               className="flex justify-between items-center odd:bg-gray-100 p-2 py-4 flex-col max-sm:py-3"
               key={event.sys.id}

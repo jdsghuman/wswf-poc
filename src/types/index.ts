@@ -13,4 +13,15 @@ export interface EventItemType {
   };
 }
 
+export interface ResourceType {
+  fields: {
+    title: string;
+    type: "pdf" | "video" | "image";
+    location?: string;
+  };
+  sys: {
+    id: string;
+  };
+}
+
 export type SortOrderType = "default" | "newest" | "oldest";
