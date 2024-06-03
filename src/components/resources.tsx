@@ -32,7 +32,7 @@ const ResourcesCard = async (resources: any) => {
       <CardContent className="max-xs:px-0">
         <ul className={`${poppins400.className}`}>
           {resources?.resources.resources.map((resource: ResourceType) => (
-            <li className="odd:bg-gray-100 p-5">
+            <li key={resource.sys.id} className="odd:bg-gray-100 p-5">
               <Link
                 className="flex items-center"
                 href={resource?.fields?.location || ""}
