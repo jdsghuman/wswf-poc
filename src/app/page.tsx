@@ -24,9 +24,9 @@ const Home = async () => {
         ) : (
           <Alert>
             <Bell className="h-4 w-4" />
-            <AlertTitle>Sign in and join online!</AlertTitle>
+            <AlertTitle>Join Us Online!</AlertTitle>
             <AlertDescription>
-              Click the sign in button in the navbarand view more content.
+              Sign in through the navbar to access exclusive content.
             </AlertDescription>
           </Alert>
         )}
