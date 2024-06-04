@@ -1,5 +1,3 @@
-"use client";
-
 import React from "react";
 import { Button } from "./ui/button";
 import Link from "next/link";
@@ -19,23 +17,16 @@ const ZoomLink: React.FC<ZoomLinkProps> = ({
     passcode ? `?pwd=${passcode}` : ""
   }`;
 
-  const handleJoinMeeting = () => {
-    window.location.href = "/api/zoom/auth";
-  };
-
   return (
-    <Button
-      className="bg-[#2d8cff] hover:bg-[#113A85]"
-      onClick={handleJoinMeeting}
-    >
-      {/* <Link
+    <Button className="bg-[#2d8cff] hover:bg-[#113A85]">
+      <Link
         href={zoomUrl}
         target="_blank"
         rel="noopener noreferrer"
         className="hover:underline"
       >
-      {/* </Link> */}
-      {linkText}
+        {linkText}
+      </Link>
     </Button>
   );
 };

@@ -1,8 +1,12 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { poppins, poppins400 } from "@/app/fonts";
-import { FaYoutube, FaFileImage } from "react-icons/fa";
-import { FaFilePdf } from "react-icons/fa6";
-import { FaPodcast } from "react-icons/fa";
+import {
+  FaYoutube,
+  FaFileImage,
+  FaCircle,
+  FaFilePdf,
+  FaPodcast,
+} from "react-icons/fa";
 import Link from "next/link";
 import { ResourceType } from "@/types";
 
@@ -16,7 +20,7 @@ const ResourcesCard = async (resources: any) => {
       case "image":
         return <FaFileImage size={22} />;
       default:
-        return "no icon";
+        return <FaCircle size={22} />;
     }
   };
 
