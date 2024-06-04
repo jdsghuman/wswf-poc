@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import { useUser } from "@clerk/nextjs";
+import { useAuth } from "@clerk/clerk-react";
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { createEventDateString } from "@/util/create-date-string";
@@ -14,7 +14,7 @@ import { RegisterModal } from "./modals/register-modal";
 const EventsCard = (eventsToDisplay: any) => {
   const [open, setOpen] = useState(false);
 
-  const { isSignedIn } = useUser();
+  const { isSignedIn } = useAuth();
 
   const handleRegister = () => {
     if (!isSignedIn) {
