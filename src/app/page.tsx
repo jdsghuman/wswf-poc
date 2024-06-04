@@ -20,7 +20,10 @@ const Home = async () => {
     <Container>
       <div className="my-4 mx-4 flex justify-end h-full">
         {userId ? (
-          <ZoomLink meetingId="1234567890" passcode="password123" />
+          <ZoomLink
+            meetingId="3808477481"
+            passcode="WlqjbPGv5Cr0lnIUI7504ZetgYDASJ.1"
+          />
         ) : (
           <Alert>
             <Bell className="h-4 w-4" />
