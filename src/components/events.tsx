@@ -12,15 +12,31 @@ import { Button } from "./ui/button";
 import { RegisterModal } from "./modals/register-modal";
 
 const EventsCard = (eventsToDisplay: any) => {
+  console.log({ eventsToDisplay });
   const [open, setOpen] = useState(false);
 
   const { isSignedIn } = useAuth();
 
-  const handleRegister = () => {
+  const handleRegister = async (eventId: string) => {
     if (!isSignedIn) {
       setOpen(true);
     } else {
       setOpen(false);
+      try {
+        const response = await fetch("/api/register", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ eventId }),
+        });
+
+        const data = await response.json();
+        alert(data.message);
+      } catch (error) {
+        console.error("Error registering for the event:", error);
+        alert("Failed to register for the event.");
+      }
     }
   };
   return (
@@ -75,7 +91,10 @@ const EventsCard = (eventsToDisplay: any) => {
                 </p>
                 <div className="max-sm:mt-1 mb-0">
                   <Button className="mx-1">More Info</Button>
-                  <Button onClick={handleRegister} className="mx-1">
+                  <Button
+                    onClick={() => handleRegister(event.fields.url)}
+                    className="mx-1"
+                  >
                     Register
                   </Button>
                 </div>
